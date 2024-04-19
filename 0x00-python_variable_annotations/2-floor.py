@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
+"""floor module"""
 
-import math
 
-
-def floor(n: float) -> int:
-    """
-    Returns the floor of the given float number.
-
-    Parameters:
-        n (float): The input number.
-
+def floor(a: float) -> int:
+    """floor: takes a float and returns the floor of the float
+    Args:
+        a (float): float to be floored
     Returns:
-        int: The floor of the input number.
+        int: floor of a
     """
-    return math.floor(n)
+    return int(a)
