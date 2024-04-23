@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""async_generator module file for 0x02-python_async_comprehension project"""
-from typing import Generator
+"""Asynchronous module with wait_random function"""
 import asyncio
 import random
 
 
-async def async_generator() -> Generator[float, None, None]:
-    """
-    async_generator function
+async def wait_random(max_delay: int = 10) -> float:
+    """Asynchronous coroutine that takes in an integer argument
+    Args:
+        max_delay (int, optional): Defaults to 10.
     Returns:
-        Generator[float, None, None]: [description]
+        float: random delay between 0 and max_delay
     """
-    for i in range(10):
-        await asyncio.sleep(1)
-        yield random.uniform(0, 10)
+    delay: float = random.uniform(0, max_delay)
+    await asyncio.sleep(delay)
+    return delay
