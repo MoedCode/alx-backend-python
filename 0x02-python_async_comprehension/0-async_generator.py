@@ -1,19 +1,16 @@
 #!/usr/bin/env python3
-"""measure_runtime module file for 0x02-python_async_comprehension project"""
+"""async_generator module file for 0x02-python_async_comprehension project"""
+from typing import Generator
 import asyncio
-import time
+import random
 
 
-async_comprehension = __import__('1-async_comprehension').async_comprehension
-
-
-async def measure_runtime() -> float:
+async def async_generator() -> Generator[float, None, None]:
     """
-    measure_runtime function
+    async_generator function
     Returns:
-        float: [description]
+        Generator[float, None, None]: [description]
     """
-    start_time = time.time()
-    await asyncio.gather(*(async_comprehension() for i in range(4)))
-    end_time = time.time()
-    return end_time - start_time
+    for i in range(10):
+        await asyncio.sleep(1)
+        yield random.uniform(0, 10)
