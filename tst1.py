@@ -5,6 +5,7 @@ from typing import List
 # Assuming wait_random is defined in a separate file and imported here
 from tst0 import wait_random
 
+
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     Asynchronously spawns wait_random n times with the specified max_delay.
