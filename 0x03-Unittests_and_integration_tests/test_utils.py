@@ -7,7 +7,7 @@ from typing import Dict, Tuple, Union
 from utils import (
     access_nested_map,
     get_json,
-    memoize
+    memoize,
 )
 
 
