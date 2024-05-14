@@ -3,10 +3,13 @@
 import unittest
 from unittest.mock import patch
 import requests
+
+
 def make_http_request(url):
     print(url)
     response = requests.get(url)
     return response.status_code
+
 
 @patch('requests.get')
 def test_successful_request(self, mock_get):
@@ -18,5 +21,7 @@ def test_successful_request(self, mock_get):
 
     # Verify that the function behaves as expected
     self.assertEqual(status_code, 200)
+
+
 if __name__ == "__main__":
     unittest.main()
